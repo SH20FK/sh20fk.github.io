@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SH2OFK BIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cursor-spotlight"></div>
+    <div id="particles-container"></div>
+
+    <section class="hero">
+        <h1 class="glitch-title" data-text="SH2OFK">SH2OFK</h1>
+        <div class="scroll-down-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <div class="left-panel">
+            <div class="music-player card">
+                <h2 class="panel-title">Музыкальный плеер</h2>
+                <div class="player-body">
+                    <div class="album-art">
+                        <img src="" alt="Обложка трека" id="album-art-img">
+                    </div>
+                    <div class="track-info">
+                        <div id="song-title-display" class="song-title">Загрузка...</div>
+                        <div id="song-artist-display" class="song-artist"></div>
+                        <div class="controls">
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                            <div class="buttons">
+                                <button id="prev-btn" class="control-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg>
+                                </button>
+                                <button id="play-pause-btn" class="control-btn play">
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30px" height="30px"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30px" height="30px"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                </button>
+                                <button id="next-btn" class="control-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <a href="https://t.me/Door0S" class="link-card card">
+                    <div class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15,12.2l-3.3,3.2c-.3.3-.7.3-1,0-.3-.3-.3-.7,0-1l2.8-2.7-4.3,2.5c-3.1,1.8-4.1,1.3-4.4-.9C4,12.3,5.1,12,6.1,11.6l12.4-4.2c.9-.3,1.7.1,1.4,1.4l-2.4,10.1c-.2.8-1,1.1-1.6.6l-3.6-3.4-2,2c-.3.3-.7.3-1,0s-.3-.7,0-1l1.7-1.7,3.9-3.7Z"/></svg>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Telegram</div>
+                        <div class="link-subtitle">Личный аккаунт</div>
+                    </div>
+                </a>
+                <a href="https://t.me/SH20FK_SP" class="link-card card">
+                    <div class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15,12.2l-3.3,3.2c-.3.3-.7.3-1,0-.3-.3-.3-.7,0-1l2.8-2.7-4.3,2.5c-3.1,1.8-4.1,1.3-4.4-.9C4,12.3,5.1,12,6.1,11.6l12.4-4.2c.9-.3,1.7.1,1.4,1.4l-2.4,10.1c-.2.8-1,1.1-1.6.6l-3.6-3.4-2,2c-.3.3-.7.3-1,0s-.3-.7,0-1l1.7-1.7,3.9-3.7Z"/></svg>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Telegram channel</div>
+                        <div class="link-subtitle">Мой телеграмм канал</div>
+                    </div>
+                </a>
+                <a href="https://www.last.fm/user/SH20FK" class="link-card card">
+                    <div class="link-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/></svg>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Last.fm</div>
+                        <div class="link-subtitle">Аккаунт на Ласт.ФМ</div>
+                    </div>
+                </a>
+		        <a href="https://steamcommunity.com/id/SH20FK/" class="link-card card">
+                    <div class="link-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"/>
+                            <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/>
+                        </svg>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Steam</div>
+                        <div class="link-subtitle">Стим профиль</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <!-- Элемент 1: Блок "Обо мне" -->
+            <div class="about-me card">
+                <h2 class="panel-title">Обо мне</h2>
+                <h3>Кто я</h3>
+                <p>Меня зовут #########, я — разработчик программного обеспечения из Челябинска. Моя страсть — создание логичных и надежных программных продуктов.</p>
+                <h3>Мой подход к работе</h3>
+                <p>Я верю, что лучший код — это тот, который не только эффективно работает, но и понятен другим разработчикам. В каждом проекте я стремлюсь к созданию стабильных, масштабируемых и легко поддерживаемых решений.</p>
+                <h3>Ключевые навыки и компетенции</h3>
+                <ul>
+                    <li><strong>Основной фокус:</strong> Активно развиваюсь в программировании на Python, изучаю его фреймворки и библиотеки.</li>
+                    <li><strong>Гибкие навыки (Soft Skills):</strong> Дружелюбен и коммуникабелен, легко адаптируюсь к новым условиям и коллективу. Умею слушать и находить компромиссы.</li>
+                </ul>
+                <h3>Цели и стремления</h3>
+                <p><em>На данном этапе моей главной целью является получение практического опыта. Я ищу возможность присоединиться к команде, где смогу применять свои знания, учиться у опытных коллег и работать над реальными задачами.</em></p>
+                <h3>Вне работы</h3>
+                <p>В свободное время я люблю погружаться в миры видеоигр, что отлично тренирует стратегическое мышление и навыки решения проблем. Также ценю время, проведенное с друзьями и близкими.</p>
+            </div>
+
+            <!-- Общая колонка для картинки и новой карточки -->
+            <div class="side-column">
+                <!-- Элемент 2: Блок с картинкой -->
+                <div class="image-placeholder card">
+                    <img src="images/avatar.jpg" alt="Мое фото">
+                </div>
+
+                <!-- Элемент 3: Карточка "Мой Сетап" -->
+                <div class="setup-card card">
+                    <h3 class="panel-title">Рабочее окружение</h3>
+                    <div class="setup-list">
+                        <!-- Процессор -->
+                        <div class="setup-item">
+                            <div class="setup-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="5" width="14" height="14" rx="1" />
+                                    <path d="M9 9h6v6H9z" />
+                                    <path d="M3 10h2M3 14h2M19 10h2M19 14h2M10 3v2M14 3v2M10 19v2M14 19v2" />
+                                </svg>
+                            </div>
+                            <div class="setup-text">
+                                <div class="setup-title">Ryzen 5 5600</div>
+                                <div class="setup-subtitle">Процессор</div>
+                            </div>
+                        </div>
+                        <!-- Видеокарта -->
+                        <div class="setup-item">
+                            <div class="setup-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                    <rect x="3" y="5" width="18" height="10" rx="2"/>
+                                    <circle cx="8.5" cy="10.5" r="1.5"/>
+                                    <circle cx="15.5" cy="10.5" r="1.5"/>
+                                    <path d="M7 15v4h10v-4"/>
+                                </svg>
+                            </div>
+                            <div class="setup-text">
+                                <div class="setup-title">AMD Radeon RX 6600</div>
+                                <div class="setup-subtitle">Видеокарта</div>
+                            </div>
+                        </div>
+                        <!-- Оперативная память -->
+                        <div class="setup-item">
+                            <div class="setup-icon">
+                                <!-- ВАША НОВАЯ ИКОНКА (ОЧИЩЕННАЯ) -->
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                    <path d="M20 38c-.517 0-.965.088-1.338.3a1.95 1.95 0 0 0-.81.938c-.336.776-.352 1.751-.352 3.012h1c0-1.24.065-2.139.27-2.613.102-.237.214-.37.388-.469.175-.1.439-.168.842-.168.428 0 .704.07.88.17s.283.224.38.459c.194.47.24 1.376.24 2.621h1c0-1.255.007-2.223-.316-3.004a1.9 1.9 0 0 0-.813-.947C20.991 38.086 20.536 38 20 38"/>
+                                    <path d="M5.5 42.247h12.497v-.997h-11.5c-.13-7.488-.997-4.632-.997.997m51.997-.997h-35.5v.997H58.5c-.5-5.997-1.003-8.535-1.003-.997"/>
+                                    <path d="M5.5 21.75v20.5h1v-19.5h51v19.5h1v-20.5z"/>
+                                    <path d="M7.5 23.75v11.68h49V23.75Zm1.084 1.084h46.832v9.512H8.584Z"/>
+                                    <path d="M9.5 39.25v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm8 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3zm-46 0v3h1v-3zm48 0v3h1v-3zM6 36.75v1h52v-1zm3.5-5.5v2.5H12v-1h-1.5v-1.5zm42.5-5.5v1h1.5v1.5h1v-2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="setup-text">
+                                <div class="setup-title">16 GB</div>
+                                <div class="setup-subtitle">Оперативная память</div>
+                            </div>
+                        </div>
+                        <!-- Накопитель -->
+                        <div class="setup-item">
+                            <div class="setup-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+                            </div>
+                            <div class="setup-text">
+                                <div class="setup-title">512 GB SSD</div>
+                                <div class="setup-subtitle">Накопитель</div>
+                            </div>
+                        </div>
+                         <!-- ОС -->
+                        <div class="setup-item">
+                            <div class="setup-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="currentColor"><path d="M 5.5253906 5.5253906 L 22.109375 7.4355469 L 22.109375 22.111328 L 5.5253906 22.111328 Z M 25.890625 7.4433594 L 42.474609 9.3535156 L 42.474609 22.111328 L 25.890625 22.111328 Z M 5.5253906 25.888672 L 22.109375 25.888672 L 22.109375 40.564453 L 5.5253906 42.474609 Z M 25.890625 25.888672 L 42.474609 25.888672 L 42.474609 38.646484 L 25.890625 40.556641 Z"/></svg>
+                            </div>
+                            <div class="setup-text">
+                                <div class="setup-title">Windows 11</div>
+                                <div class="setup-subtitle">Операционная система</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+
+</body>
+</html>
