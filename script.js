@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
             audioSrc: 'audio/song3.mp3',
             coverSrc: 'images/cover3.jpg'
         },
-	{
+	    {
             title: 'Слово Мера 2',
             artist: 'Слава КПСС',
-            audioSrc: 'audio/song4.mp3', // Путь к вашему файлу
-            coverSrc: 'images/cover4.jpg'  // Путь к вашей обложке
+            audioSrc: 'audio/song4.mp3',
+            coverSrc: 'images/cover4.jpg'
         },
     ];
 
@@ -62,9 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressContainer = document.querySelector('.progress-container');
     const currentTimeEl = document.getElementById('current-time');
     const durationEl = document.getElementById('duration');
+    const volumeBtn = document.getElementById('volume-btn');
+    const volumeSlider = document.getElementById('volume-slider');
+    const volumeOnIcon = volumeBtn.querySelector('.volume-on');
+    const volumeOffIcon = volumeBtn.querySelector('.volume-off');
 
     let currentSongIndex = 0;
     let isPlaying = false;
+    let lastVolume = 1;
 
 
     function loadSong(song) {
@@ -135,12 +140,40 @@ document.addEventListener('DOMContentLoaded', () => {
         element.textContent = `${minutes}:${seconds}`;
     }
 
+    function updateVolume() {
+        const volume = parseFloat(volumeSlider.value);
+        audio.volume = volume;
+
+        if (volume === 0) {
+            volumeOnIcon.style.display = 'none';
+            volumeOffIcon.style.display = 'block';
+        } else {
+            volumeOnIcon.style.display = 'block';
+            volumeOffIcon.style.display = 'none';
+        }
+    }
+    
+    function toggleMute() {
+        if (audio.volume > 0) {
+            lastVolume = audio.volume;
+            audio.volume = 0;
+            volumeSlider.value = 0;
+            updateVolume();
+        } else {
+            audio.volume = lastVolume;
+            volumeSlider.value = lastVolume;
+            updateVolume();
+        }
+    }
+
     playPauseBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
     prevBtn.addEventListener('click', playPrevSong);
     nextBtn.addEventListener('click', playNextSong);
     audio.addEventListener('timeupdate', updateProgress);
     audio.addEventListener('ended', playNextSong); 
     progressContainer.addEventListener('click', setProgress);
+    volumeSlider.addEventListener('input', updateVolume);
+    volumeBtn.addEventListener('click', toggleMute);
 
     loadSong(songs[currentSongIndex]);
 });
