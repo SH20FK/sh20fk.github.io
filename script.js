@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Код для курсора и скролла ---
     const spotlight = document.getElementById('cursor-spotlight');
     window.addEventListener('mousemove', (e) => {
         const x = e.clientX;
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function handleScroll() {
         const scrollPosition = window.scrollY;
-        // Появление основного контента
         if (scrollPosition > 10) {
             mainContent.classList.add('visible');
         } else {
@@ -27,10 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Проверка состояния при загрузке страницы
+    handleScroll();
 
 
-    // --- ЛОГИКА МУЗЫКАЛЬНОГО ПЛЕЕРА ---
     const songs = [
         { title: 'Эпилог', artist: 'mzlff', audioSrc: 'audio/song1.mp3', coverSrc: 'images/cover1.jpg' },
         { title: 'Свободное падение', artist: 'mzlff', audioSrc: 'audio/song2.mp3', coverSrc: 'images/cover2.jpg' },
@@ -151,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSong(songs[currentSongIndex]);
 
 
-    // --- ЛОГИКА ЗАГРУЗКИ ДАННЫХ ДЛЯ КАРТОЧКИ LAST.FM ---
     const refreshBtn = document.getElementById('lastfm-refresh-btn');
 
     async function fetchNowPlaying() {
@@ -191,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNowPlaying();
 
 
-    // --- ЛОГИКА ДЛЯ ИНТЕРАКТИВНОЙ КАРТОЧКИ ---
     const cardHeader = document.getElementById('interactive-card-header');
     const flipper = document.getElementById('flipper-container');
     const cardFront = flipper.querySelector('.card-front');
@@ -199,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardTitle = document.getElementById('interactive-card-title');
     const cardArrow = document.getElementById('interactive-card-arrow');
     
-    // ИСПРАВЛЕНИЕ: Функция для подстройки высоты карточки
     function updateFlipperHeight() {
         if (flipper.classList.contains('is-flipped')) {
             flipper.style.height = cardBack.scrollHeight + 'px';
@@ -209,12 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (cardHeader) {
-        // Устанавливаем начальную высоту
         updateFlipperHeight();
 
         cardHeader.addEventListener('click', () => {
             flipper.classList.toggle('is-flipped');
-            // Обновляем высоту при каждом клике
             updateFlipperHeight();
             
             if (flipper.classList.contains('is-flipped')) {
@@ -226,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Пересчитываем высоту при изменении размера окна
         window.addEventListener('resize', updateFlipperHeight);
     }
 });
