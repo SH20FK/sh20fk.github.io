@@ -3,9 +3,8 @@
     --dark-bg: #030303;
     --light-color: #d1d1d1;
     --card-bg: rgba(20, 20, 20, 0.5);
-    --arrow-color: #FFFFFF; /* Белый цвет для стрелки */
-    --arrow-glow-color: rgba(255, 255, 255, 0.4); /* Белое свечение */
-    /* Цвета глитча для заголовка */
+    --arrow-color: #FFFFFF;
+    --arrow-glow-color: rgba(255, 255, 255, 0.4);
     --glitch-color-1: var(--accent-color); 
     --glitch-color-2: #FF00FF; 
 }
@@ -55,16 +54,16 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column; 
-    justify-content: flex-start; /* Начинаем элементы сверху */
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    justify-content: flex-start;
+    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 10;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    padding-top: 15vh; /* Добавляем отступ сверху для надписи */
-    box-sizing: border-box; /* Важно для padding */
+    padding-top: 15vh;
+    box-sizing: border-box;
 }
 
 .hero.fade-out {
@@ -79,7 +78,6 @@ body {
     color: var(--light-color);
     text-transform: uppercase;
     position: relative;
-    /* margin-bottom: 0; */ /* Убрано, так как используется padding-top на .hero */
 }
 
 .glitch-title::before,
@@ -96,13 +94,13 @@ body {
 
 .glitch-title::before {
     left: 2px;
-    text-shadow: -2px 0 var(--glitch-color-1); /* Используем переменные для глитча */
+    text-shadow: -2px 0 var(--glitch-color-1);
     animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
 }
 
 .glitch-title::after {
     left: -2px;
-    text-shadow: -2px 0 var(--glitch-color-2), 2px 2px var(--glitch-color-1); /* Используем переменные для глитча */
+    text-shadow: -2px 0 var(--glitch-color-2), 2px 2px var(--glitch-color-1);
     animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
 }
 
@@ -124,17 +122,16 @@ body {
     100% { clip-path: inset(54% 0 8% 0); }
 }
 
-/* Стили для стрелочки прокрутки */
 .scroll-arrow {
     width: 80px;
     height: 80px;
     opacity: 1;
     cursor: pointer;
     z-index: 11;
-    position: absolute; /* Абсолютное позиционирование относительно .hero */
-    bottom: 30px; /* Опускаем в самый низ первого слайда (увеличьте при необходимости) */
+    position: absolute;
+    bottom: 30px;
     left: 50%;
-    transform: translateX(-50%); /* Центрирование по горизонтали */
+    transform: translateX(-50%);
 }
 
 .scroll-arrow svg {
@@ -143,23 +140,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    color: var(--arrow-color); /* Используем белый цвет */
-    /* Новые анимации для плавного эффекта */
+    color: var(--arrow-color);
     animation: float-arrow 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite; 
 }
 
-/* Анимация плавного подъема/опускания */
 @keyframes float-arrow {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); } /* Легкое движение вверх */
+    50% { transform: translateY(-8px); }
 }
 
-/* Анимация пульсирующего свечения */
 @keyframes pulse-glow {
     0%, 100% { filter: drop-shadow(0 0 10px var(--arrow-glow-color)); }
-    50% { filter: drop-shadow(0 0 20px var(--arrow-glow-color)); } /* Свечение становится ярче */
+    50% { filter: drop-shadow(0 0 20px var(--arrow-glow-color)); }
 }
-
 
 .container {
     width: 100%;

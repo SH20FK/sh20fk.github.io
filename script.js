@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             mainContent.classList.remove('visible');
         }
-        // Исчезновение Hero
         if (scrollPosition > 10) {
             heroSection.classList.add('fade-out');
         } else {
