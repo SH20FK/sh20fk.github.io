@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Alexander Salamatin - Python Developer | SH20FK Portfolio</title>
+    <meta name="title" content="Alexander Salamatin - Python Developer | SH20FK Portfolio">
+    <meta name="description" content="Python developer from Chelyabinsk. Specializing in clean code, web development with HTML/CSS/JavaScript. Available for freelance and full-time opportunities.">
+    <meta name="keywords" content="Python Developer, Web Developer, Alexander Salamatin, SH20FK, Portfolio, Chelyabinsk, HTML, CSS, JavaScript">
+    <meta name="author" content="Alexander Salamatin">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sh20fk.github.io/test-project/">
+    <meta property="og:title" content="Alexander Salamatin - Python Developer | SH20FK Portfolio">
+    <meta property="og:description" content="Python developer from Chelyabinsk. Specializing in clean code, web development with HTML/CSS/JavaScript.">
+    <meta property="og:image" content="https://sh20fk.github.io/test-project/og-image.jpg">
+    <meta property="og:site_name" content="SH20FK Portfolio">
+    <meta property="og:locale" content="ru_RU">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sh20fk.github.io/test-project/">
+    <meta property="twitter:title" content="Alexander Salamatin - Python Developer | SH20FK Portfolio">
+    <meta property="twitter:description" content="Python developer from Chelyabinsk. Specializing in clean code, web development with HTML/CSS/JavaScript.">
+    <meta property="twitter:image" content="https://sh20fk.github.io/test-project/twitter-image.jpg">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link" data-i18n="aria_skip">Skip to main content</a>
+    
+    <div class="background-container" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <nav class="navbar glass" role="navigation" aria-label="Main navigation">
+        <div class="nav-group nav-left">
+            <a class="nav-brand" href="index.html">
+                <span class="brand-initial glass-mini" aria-hidden="true">A</span>
+                <span class="brand-name">SH20FK</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#work" class="nav-link" data-i18n="nav_work">Work</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-music glass-mini" id="nav-music" title="Now playing on Last.fm">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="music-icon">
+                    <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
+                </svg>
+                <span class="music-text">Loading...</span>
+            </div>
+        </div>
+
+        <div class="nav-group nav-right">
+            <a href="contact.html" class="nav-cta" data-i18n="nav_hire">Hire me</a>
+            <div class="nav-clock glass-mini">
+                <span class="clock-label" data-i18n="nav_time">Chelyabinsk</span>
+                <span class="clock-time" id="clock-time">--:--</span>
+            </div>
+            <div class="nav-socials">
+                <a href="https://t.me/Door0S" target="_blank" rel="noopener noreferrer" class="social-icon glass-mini" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/SH20FK" target="_blank" rel="noopener noreferrer" class="social-icon glass-mini" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <button class="lang-toggle glass-mini" id="lang-toggle" data-i18n-aria="aria_lang" aria-label="Switch language">
+                <span class="lang-text">RU</span>
+            </button>
+
+            <button class="theme-toggle glass-mini" data-i18n-aria="aria_theme" aria-label="Toggle dark/light theme" aria-pressed="false">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+
+            <button class="mobile-menu-toggle glass-mini" id="mobile-menu-toggle" data-i18n-aria="aria_menu" aria-label="Toggle mobile menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu glass" id="mobile-menu">
+        <a href="#about" class="mobile-menu-link" data-i18n="nav_about">About</a>
+        <a href="#work" class="mobile-menu-link" data-i18n="nav_work">Work</a>
+        <a href="contact.html" class="mobile-menu-link" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <main id="main-content" class="container">
+        <section class="module module-hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content" data-aos>
+                <span class="hero-label glass-mini" role="text"><span aria-hidden="true">→</span> <span data-i18n="hero_welcome">Welcome</span></span>
+                <h1 id="hero-title" class="hero-title">
+                    Alexander<br>
+                    <span class="gradient-text">Salamatin</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-i18n="hero_role">Python Developer</span> • <span class="typing-text" aria-live="polite"></span>
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item glass-mini">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span data-i18n="hero_location">Chelyabinsk, Russia</span>
+                    </div>
+                    <div class="meta-item glass-mini">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero_available">Available for work</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos>
+                <div class="glass-card code-card" role="img" aria-label="Python code snippet showing Developer class">
+                    <div class="code-header">
+                        <div class="code-dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="code-title">developer.py</span>
+                    </div>
+                    <div class="code-body">
+                        <div class="line"><span class="keyword">class</span> <span class="class">Developer</span>:</div>
+                        <div class="line">    <span class="keyword">def</span> <span class="function">__init__</span>(self):</div>
+                        <div class="line">        self.name = <span class="string">"Alexander"</span></div>
+                        <div class="line">        self.role = <span class="string">"Python Dev"</span></div>
+                        <div class="line">        self.location = <span class="string">"RU"</span></div>
+                        <div class="line">        self.passion = <span class="string">"Code"</span></div>
+                        <div class="line empty"></div>
+                        <div class="line"><span class="comment"># Ready to create amazing things</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module module-stats" aria-label="Statistics">
+            <div class="stats-grid">
+                <div class="stat-card glass-card liquid-glass" data-aos>
+                    <div class="stat-icon" aria-hidden="true">🚀</div>
+                    <div class="stat-value" data-count="2" aria-label="2 projects completed">0</div>
+                    <div class="stat-label" data-i18n="stats_projects">Projects Completed</div>
+                </div>
+                <div class="stat-card glass-card liquid-glass" data-aos>
+                    <div class="stat-icon" aria-hidden="true">🛠️</div>
+                    <div class="stat-value" data-count="4" aria-label="4 technologies">0</div>
+                    <div class="stat-label" data-i18n="stats_technologies">Technologies</div>
+                </div>
+                <div class="stat-card glass-card liquid-glass" data-aos>
+                    <div class="stat-icon" aria-hidden="true">🔥</div>
+                    <div class="stat-value" aria-label="100 percent motivation">100%</div>
+                    <div class="stat-label" data-i18n="stats_motivation">Motivation</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module module-about" id="about" aria-labelledby="about-heading">
+            <div class="module-header" data-aos>
+                <span class="module-badge glass-mini" data-i18n="about_badge">About Me</span>
+                <h2 id="about-heading" data-i18n="about_heading">Who I Am</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text glass-card liquid-glass" data-aos>
+                    <p data-i18n="about_p1">Hi! I'm Alexander, a Python developer from Chelyabinsk passionate about creating clean, efficient code.</p>
+                    <p data-i18n="about_p2">I'm constantly learning new technologies and approaches to software development. My focus is on writing maintainable code that solves real problems.</p>
+                    <p data-i18n="about_p3">Currently looking for opportunities to gain practical experience and contribute to interesting projects.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="9 11 12 14 22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                            <span data-i18n="about_h1">Clean Code Advocate</span>
+                        </div>
+                        <div class="highlight">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="9 11 12 14 22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                            <span data-i18n="about_h2">Fast Learner</span>
+                        </div>
+                        <div class="highlight">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="9 11 12 14 22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                            <span data-i18n="about_h3">Team Player</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-card glass-card liquid-glass" data-aos>
+                    <h3 data-i18n="skills_heading">Technical Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Python</span>
+                                <span aria-label="75 percent proficiency">75%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>HTML/CSS</span>
+                                <span aria-label="80 percent proficiency">80%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>JavaScript</span>
+                                <span aria-label="70 percent proficiency">70%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Git</span>
+                                <span aria-label="65 percent proficiency">65%</span>
+                            </div>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module module-work" id="work" aria-labelledby="work-heading">
+            <div class="module-header" data-aos>
+                <span class="module-badge glass-mini" data-i18n="work_badge">Portfolio</span>
+                <h2 id="work-heading" data-i18n="work_heading">Featured Work</h2>
+            </div>
+            <div class="work-grid">
+                <article class="work-card glass-card liquid-glass large" data-aos>
+                    <div class="work-image">
+                        <div class="work-overlay">
+                            <span class="work-number" aria-hidden="true">01</span>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-tags">
+                            <span class="tag glass-mini">HTML</span>
+                            <span class="tag glass-mini">CSS</span>
+                            <span class="tag glass-mini">JavaScript</span>
+                        </div>
+                        <h3 data-i18n="work_project1_title">NiosCraft Website</h3>
+                        <p data-i18n="work_project1_desc">Complete design and development of a gaming server website featuring modern UI/UX, custom animations, and responsive design.</p>
+                        <a href="https://nioscraft.ru" target="_blank" rel="noopener noreferrer" class="work-link" aria-label="View NiosCraft Website project (opens in new tab)">
+                            <span data-i18n="work_view">View Project</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-shine"></div>
+                </article>
+
+                <article class="work-card glass-card liquid-glass" data-aos>
+                    <div class="work-image small">
+                        <div class="work-overlay">
+                            <span class="work-number" aria-hidden="true">02</span>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-tags">
+                            <span class="tag glass-mini">HTML</span>
+                            <span class="tag glass-mini">CSS</span>
+                            <span class="tag glass-mini">JS</span>
+                            <span class="tag glass-mini">API</span>
+                        </div>
+                        <h3 data-i18n="work_project2_title">Personal Portfolio</h3>
+                        <p data-i18n="work_project2_desc">Interactive portfolio with Last.fm integration and dynamic content.</p>
+                        <a href="https://sh20fk.github.io" target="_blank" rel="noopener noreferrer" class="work-link" aria-label="View Personal Portfolio project (opens in new tab)">
+                            <span data-i18n="work_view">View Project</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-shine"></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="module module-info" aria-label="Additional information">
+            <div class="info-grid">
+                <div class="info-card glass-card liquid-glass music" data-aos>
+                    <div class="music-artwork">🎵</div>
+                    <div class="info-header">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
+                        </svg>
+                        <div class="info-title">
+                            <h4 data-i18n="info_music_title">Now Playing</h4>
+                            <p class="lastfm-status" id="lastfm-status" aria-live="polite">Loading...</p>
+                        </div>
+                        <button id="refresh-btn" class="glass-mini" data-i18n-aria="aria_refresh" aria-label="Refresh now playing track">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="lastfm-track" id="lastfm-track" aria-live="polite"></p>
+                    <div class="music-meta"></div>
+                </div>
+
+                <div class="info-card glass-card liquid-glass quote" data-aos>
+                    <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                    </svg>
+                    <p data-i18n="info_quote">"Code is like humor. When you have to explain it, it's bad."</p>
+                    <span data-i18n="info_quote_author">Cory House</span>
+                </div>
+
+                <div class="info-card glass-card liquid-glass setup" data-aos>
+                    <h4><span aria-hidden="true">🖥️</span> <span data-i18n="info_setup">My Setup</span></h4>
+                    <div class="setup-list">
+                        <div class="setup-item">
+                            <span>CPU</span>
+                            <span>Ryzen 5 5600</span>
+                        </div>
+                        <div class="setup-item">
+                            <span>GPU</span>
+                            <span>RX 6600</span>
+                        </div>
+                        <div class="setup-item">
+                            <span>RAM</span>
+                            <span>16 GB</span>
+                        </div>
+                        <div class="setup-item">
+                            <span>SSD</span>
+                            <span>512 GB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module module-contact" id="contact" aria-labelledby="contact-heading">
+            <div class="contact-header glass-card liquid-glass" data-aos>
+                <h2 id="contact-heading" data-i18n="contact_heading">Let's Work Together</h2>
+                <p data-i18n="contact_subtitle">I'm always interested in hearing about new projects and opportunities.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="https://t.me/Door0S" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Contact via Telegram @Door0S (opens in new tab)">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Telegram</h4>
+                        <p>@Door0S</p>
+                    </div>
+                    <div class="card-shine"></div>
+                </a>
+
+                <a href="https://t.me/SH20FK_SP" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Telegram Channel @SH20FK_SP (opens in new tab)">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Channel</h4>
+                        <p>@SH20FK_SP</p>
+                    </div>
+                    <div class="card-shine"></div>
+                </a>
+
+                <a href="https://www.last.fm/user/SH20FK" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Last.fm profile @SH20FK (opens in new tab)">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Last.fm</h4>
+                        <p>@SH20FK</p>
+                    </div>
+                    <div class="card-shine"></div>
+                </a>
+
+                <a href="https://steamcommunity.com/id/SH20FK/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Steam profile SH20FK (opens in new tab)">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-4.6 0-8.45-3.08-9.64-7.27l3.83 1.58a2.84 2.84 0 0 0 2.78 2.27c1.56 0 2.83-1.27 2.83-2.83v-.13l3.4-2.43h.08a3.65 3.65 0 0 0 3.65-3.65 3.65 3.65 0 0 0-3.65-3.65 3.65 3.65 0 0 0-3.65 3.65v.09L8.04 12.9a2.82 2.82 0 0 0-2.48-1.47c-.63 0-1.2.21-1.67.55L2 11.45A10 10 0 0 1 12 2m5.89 5.88c1.22 0 2.21.99 2.21 2.21a2.21 2.21 0 0 1-2.21 2.22 2.21 2.21 0 0 1-2.22-2.22c0-1.22 1-2.21 2.22-2.21m-9.77 7.84l-.9-.36c.2.49.6.86 1.15 1.02.99.41 2.13-.04 2.54-1.03.2-.48.21-1.01.01-1.48a1.9 1.9 0 0 0-1.04-1.04c-.48-.2-1-.19-1.44-.01l.94.39c.73.3 1.07 1.16.77 1.89a1.42 1.42 0 0 1-1.88.77"/>
+                    </div>
+                    <div>
+                        <h4>Steam</h4>
+                        <p>SH20FK</p>
+                    </div>
+                    <div class="card-shine"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p data-i18n="footer_text">© 2025 Alexander Salamatin. Crafted with code and passion.</p>
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top glass" data-i18n-aria="aria_scroll" aria-label="Scroll to top of page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="translations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

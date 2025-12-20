@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SH20FK Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link" data-i18n="aria_skip">Skip to main content</a>
+
+    <div class="background-container" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <nav class="navbar glass" role="navigation" aria-label="Main navigation">
+        <div class="nav-group nav-left">
+            <a class="nav-brand" href="index.html">
+                <span class="brand-initial glass-mini" aria-hidden="true">A</span>
+                <span class="brand-name">SH20FK</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="index.html#work" class="nav-link" data-i18n="nav_work">Work</a>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-music glass-mini" id="nav-music" title="Now playing on Last.fm">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="music-icon">
+                    <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
+                </svg>
+                <span class="music-text">Loading...</span>
+            </div>
+        </div>
+
+        <div class="nav-group nav-right">
+            <div class="nav-clock glass-mini">
+                <span class="clock-label" data-i18n="nav_time">Chelyabinsk</span>
+                <span class="clock-time" id="clock-time">--:--</span>
+            </div>
+            <div class="nav-socials">
+                <a href="https://t.me/Door0S" target="_blank" rel="noopener noreferrer" class="social-icon glass-mini" aria-label="Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/SH20FK" target="_blank" rel="noopener noreferrer" class="social-icon glass-mini" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <button class="lang-toggle glass-mini" id="lang-toggle" data-i18n-aria="aria_lang" aria-label="Switch language">
+                <span class="lang-text">RU</span>
+            </button>
+
+            <button class="theme-toggle glass-mini" data-i18n-aria="aria_theme" aria-label="Toggle dark/light theme" aria-pressed="false">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container">
+        <section class="module module-form" aria-labelledby="form-heading">
+            <div class="form-wrapper glass-card liquid-glass" data-aos>
+                <div class="form-header">
+                    <span class="form-icon">✉️</span>
+                    <h2 id="form-heading" data-i18n="form_heading">Send Message</h2>
+                </div>
+                <form id="contact-form" class="contact-form" novalidate method="POST" action="https://formspree.io/f/xpqaweew">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " required aria-required="true" aria-describedby="name-error" autocomplete="name">
+                            <label for="name"><span data-i18n="form_name">Name</span> *</label>
+                            <span class="error-message" id="name-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required aria-required="true" aria-describedby="email-error" autocomplete="email">
+                            <label for="email"><span data-i18n="form_email">Email</span> *</label>
+                            <span class="error-message" id="email-error" role="alert"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder=" " required aria-required="true" aria-describedby="subject-error">
+                        <label for="subject"><span data-i18n="form_subject">Subject</span> *</label>
+                        <span class="error-message" id="subject-error" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" placeholder=" " required aria-required="true" aria-describedby="message-error"></textarea>
+                        <label for="message"><span data-i18n="form_message">Message</span> *</label>
+                        <span class="error-message" id="message-error" role="alert"></span>
+                    </div>
+                    <button type="submit" class="submit-btn glass-mini" aria-label="Send message">
+                        <span data-i18n="form_send">Send</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p data-i18n="footer_text">© 2025 Alexander Salamatin. Crafted with code and passion.</p>
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top glass" data-i18n-aria="aria_scroll" aria-label="Scroll to top of page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="translations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
