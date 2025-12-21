@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | SH20FK Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/brand/09_favicon_32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/01_primary_dark_1080.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,9 +21,9 @@
 
     <nav class="navbar glass" role="navigation" aria-label="Main navigation">
         <div class="nav-group nav-left">
-            <a class="nav-brand" href="index.html">
-                <span class="brand-initial glass-mini" aria-hidden="true">A</span>
-                <span class="brand-name">SH20FK</span>
+            <a class="nav-brand" href="index.html" aria-label="SH20FK">
+                <img src="assets/brand/05_icon_only_dark_1080.png" alt="" class="brand-logo" loading="lazy">
+                <img src="assets/brand/07_wordmark_only_transparent.png" alt="SH20FK" class="brand-wordmark" loading="lazy">
             </a>
             <div class="nav-links">
                 <a href="index.html#about" class="nav-link" data-i18n="nav_about">About</a>
@@ -61,23 +61,6 @@
             <button class="lang-toggle glass-mini" id="lang-toggle" data-i18n-aria="aria_lang" aria-label="Switch language">
                 <span class="lang-text">RU</span>
             </button>
-
-            <button class="theme-toggle glass-mini" data-i18n-aria="aria_theme" aria-label="Toggle dark/light theme" aria-pressed="false">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;" aria-hidden="true">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
         </div>
     </nav>
 
@@ -85,7 +68,7 @@
         <section class="module module-form" aria-labelledby="form-heading">
             <div class="form-wrapper glass-card liquid-glass" data-aos>
                 <div class="form-header">
-                    <span class="form-icon">✉️</span>
+                    <span class="form-icon">&#9993;</span>
                     <h2 id="form-heading" data-i18n="form_heading">Send Message</h2>
                 </div>
                 <form id="contact-form" class="contact-form" novalidate method="POST" action="https://formspree.io/f/xpqaweew">
@@ -125,7 +108,7 @@
     </main>
 
     <footer class="footer" role="contentinfo">
-        <p data-i18n="footer_text">© 2025 Alexander Salamatin. Crafted with code and passion.</p>
+        <p data-i18n="footer_text">&copy; 2025 Alexander Salamatin. Crafted with code and passion.</p>
     </footer>
 
     <button id="scroll-to-top" class="scroll-to-top glass" data-i18n-aria="aria_scroll" aria-label="Scroll to top of page">
@@ -139,4 +122,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
