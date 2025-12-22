@@ -25,8 +25,10 @@ html.lenis {
     height: auto;
 }
 
-.lenis body {
-    overflow: hidden;
+@media (min-width: 769px) {
+    .lenis body {
+        overflow: hidden;
+    }
 }
 
 .lenis-smooth {
@@ -2451,4 +2453,3 @@ body {
         max-height: 160px;
     }
 }
-
