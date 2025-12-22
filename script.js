@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const LenisCtor = window.Lenis || (typeof Lenis !== 'undefined' ? Lenis : null);
         const root = document.documentElement;
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
         if (LenisCtor) {
             lenis = new LenisCtor({
@@ -142,7 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 smoothWheel: true,
                 smoothTouch: false
             });
-            root?.classList.add('lenis', 'lenis-smooth');
+            
+            if (!isTouchDevice) {
+                root?.classList.add('lenis', 'lenis-smooth');
+            }
+            
             lenis.on("scroll", ({ scroll }) => handleScroll(scroll));
             const raf = (time) => {
                 lenis.raf(time);
@@ -673,5 +678,4 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Fatal error in script:', error);
     }
 });
-
 
