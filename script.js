@@ -136,8 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const LenisCtor = window.Lenis || (typeof Lenis !== 'undefined' ? Lenis : null);
         const root = document.documentElement;
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const allowLenis = Boolean(LenisCtor && !isTouchDevice && !prefersReducedMotion);
 
-        if (LenisCtor) {
+        if (allowLenis) {
             lenis = new LenisCtor({
                 duration: 1.1,
                 smoothWheel: true,
@@ -156,6 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(raf);
         } else {
             root?.classList.remove('lenis', 'lenis-smooth');
+            if (root) root.style.overflow = '';
+            if (document.body) document.body.style.overflow = '';
             window.addEventListener("scroll", () => handleScroll(window.scrollY));
             handleScroll(window.scrollY);
         }
