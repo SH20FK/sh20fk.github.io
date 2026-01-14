@@ -60,7 +60,7 @@ const translations = {
         form_fail: 'Ошибка отправки',
         contact_heading: 'Давайте работать вместе',
         contact_subtitle: 'Всегда открыт к новым проектам и возможностям.',
-        footer_text: '© 2025 Alexander Salamatin. Создано кодом и с душой.'
+        footer_text: '© 2026 Alexander Salamatin. Создано кодом и с душой.'
     },
     en: {
         nav_about: 'About',
@@ -123,7 +123,7 @@ const translations = {
         form_fail: 'Error sending message',
         contact_heading: 'Let\'s Work Together',
         contact_subtitle: 'I\'m always interested in hearing about new projects and opportunities.',
-        footer_text: '© 2025 Alexander Salamatin. Crafted with code and passion.'
+        footer_text: '© 2026 Alexander Salamatin. Crafted with code and passion.'
     }
 };
 
