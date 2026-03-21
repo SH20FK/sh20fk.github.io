@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const formStatus = document.getElementById('form-status');
         const scrollToTopBtn = document.getElementById('scroll-to-top');
         const clockTime = document.getElementById('clock-time');
+        const backgroundContainer = document.querySelector('.background-container');
+        const root = document.documentElement;
         const fallbackArtwork = 'assets/404/404.png';
         let lenis = null;
         let lastFmCache = { data: null, timestamp: 0 };
@@ -99,44 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (scrollToTopBtn) {
                 scrollToTopBtn.classList.toggle("visible", y > 500);
             }
+            const scrollHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+            const progress = Math.max(0, Math.min(1, y / scrollHeight));
+            root?.style.setProperty('--scroll-progress', progress.toFixed(4));
+            root?.style.setProperty('--bg-scroll-y', `${Math.max(-18, progress * -18).toFixed(2)}px`);
         };
 
-        if (navbar && window.scrollY < 50) {
-            navbar.classList.add("expanded");
-        }
-
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            if (navbar) {
-                if (y < 50) {
-                    navbar.classList.add('expanded');
-                    navbar.classList.remove('collapsed');
-                } else if (y > 100) {
-                    navbar.classList.add('collapsed');
-                    navbar.classList.remove('expanded');
-                }
-            }
-            if (scrollToTopBtn) {
-                scrollToTopBtn.classList.toggle('visible', y > 500);
-            }
-        });
-        (function initialNavbarState() {
-            const y = window.scrollY;
-            if (navbar) {
-                if (y < 50) {
-                    navbar.classList.add('expanded');
-                    navbar.classList.remove('collapsed');
-                } else if (y > 100) {
-                    navbar.classList.add('collapsed');
-                    navbar.classList.remove('expanded');
-                }
-            }
-        })();
-
         const LenisCtor = window.Lenis || (typeof Lenis !== 'undefined' ? Lenis : null);
-        const root = document.documentElement;
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const supportsFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
         const allowLenis = Boolean(LenisCtor && !isTouchDevice && !prefersReducedMotion);
 
         if (allowLenis) {
@@ -160,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
             root?.classList.remove('lenis', 'lenis-smooth');
             if (root) root.style.overflow = '';
             if (document.body) document.body.style.overflow = '';
-            window.addEventListener("scroll", () => handleScroll(window.scrollY));
-            handleScroll(window.scrollY);
+            window.addEventListener("scroll", () => handleScroll(window.scrollY), { passive: true });
         }
+        handleScroll(window.scrollY);
 
         function updateClock() {
             if (!clockTime) return;
@@ -175,6 +149,213 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         updateClock();
         setInterval(updateClock, 60000);
+
+        const setReveal = (selector, effect, step = 90, startDelay = 0) => {
+            document.querySelectorAll(selector).forEach((element, index) => {
+                element.dataset.aos = effect;
+                element.style.setProperty('--aos-delay', `${startDelay + index * step}ms`);
+            });
+        };
+
+        const applyRevealPresets = () => {
+            setReveal('.hero-content', 'left', 0, 40);
+            setReveal('.hero-visual', 'right', 0, 160);
+            setReveal('.stats-grid .stat-card', 'pop', 90, 40);
+            setReveal('.module-about .module-header', 'up');
+            setReveal('.module-about .about-text', 'left', 0, 80);
+            setReveal('.module-about .skills-card', 'right', 0, 160);
+            setReveal('.module-work .module-header', 'up');
+            setReveal('.work-grid .work-card', 'zoom', 120, 60);
+            setReveal('.info-grid .info-card', 'zoom', 120, 80);
+            setReveal('.module-contact .contact-header', 'up');
+            setReveal('.contact-grid .contact-card', 'zoom', 80, 40);
+            setReveal('.module-form .form-wrapper', 'zoom', 0, 80);
+        };
+
+        const setupStaggerGroups = () => {
+            if (prefersReducedMotion || typeof Element === 'undefined' || typeof Element.prototype.animate !== 'function' || typeof IntersectionObserver === 'undefined') {
+                return;
+            }
+
+            const groups = [
+                { container: document.querySelector('.hero-meta'), selector: '.meta-item', x: 0, y: 18, scale: 0.96, step: 90, duration: 520, delay: 200 },
+                { container: document.querySelector('.code-body'), selector: '.line:not(.empty)', x: 0, y: 14, scale: 1, step: 50, duration: 420, delay: 200 },
+                { container: document.querySelector('.about-highlights'), selector: '.highlight', x: -16, y: 0, scale: 1, step: 80, duration: 500, delay: 160 },
+                { container: document.querySelector('.skills-list'), selector: '.skill-item', x: 0, y: 16, scale: 0.98, step: 70, duration: 500, delay: 150 },
+                { container: document.querySelector('.setup-list'), selector: '.setup-item', x: -14, y: 0, scale: 1, step: 70, duration: 500, delay: 140 },
+                { container: document.querySelector('.contact-form'), selector: '.form-group, .submit-btn', x: 0, y: 20, scale: 0.98, step: 80, duration: 520, delay: 150 }
+            ].filter((group) => group.container);
+
+            if (!groups.length) {
+                return;
+            }
+
+            const groupMap = new Map(groups.map((group) => [group.container, group]));
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const group = groupMap.get(entry.target);
+                    if (!group) {
+                        return;
+                    }
+
+                    entry.target.querySelectorAll(group.selector).forEach((item, index) => {
+                        item.animate(
+                            [
+                                {
+                                    opacity: 0,
+                                    transform: `translate3d(${group.x}px, ${group.y}px, 0) scale(${group.scale})`
+                                },
+                                {
+                                    opacity: 1,
+                                    transform: 'translate3d(0, 0, 0) scale(1)'
+                                }
+                            ],
+                            {
+                                duration: group.duration,
+                                delay: group.delay + index * group.step,
+                                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                                fill: 'both'
+                            }
+                        );
+                    });
+
+                    staggerObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.25, rootMargin: '0px 0px -80px 0px' });
+
+            groups.forEach(({ container }) => staggerObserver.observe(container));
+        };
+
+        const setupCardTilt = () => {
+            if (prefersReducedMotion || !supportsFinePointer) {
+                return;
+            }
+
+            document.querySelectorAll('.liquid-glass, .code-card').forEach((card) => {
+                let frame = 0;
+                let nextState = {
+                    rotateX: 0,
+                    rotateY: 0,
+                    shiftX: 0,
+                    shiftY: 0,
+                    glowX: '50%',
+                    glowY: '50%'
+                };
+
+                const commit = () => {
+                    frame = 0;
+                    card.style.setProperty('--pointer-rotate-x', `${nextState.rotateX.toFixed(2)}deg`);
+                    card.style.setProperty('--pointer-rotate-y', `${nextState.rotateY.toFixed(2)}deg`);
+                    card.style.setProperty('--pointer-translate-x', `${nextState.shiftX.toFixed(2)}px`);
+                    card.style.setProperty('--pointer-translate-y', `${nextState.shiftY.toFixed(2)}px`);
+                    card.style.setProperty('--glow-x', nextState.glowX);
+                    card.style.setProperty('--glow-y', nextState.glowY);
+                };
+
+                const schedule = () => {
+                    if (!frame) {
+                        frame = requestAnimationFrame(commit);
+                    }
+                };
+
+                const reset = () => {
+                    card.classList.remove('is-tilting');
+                    nextState = {
+                        rotateX: 0,
+                        rotateY: 0,
+                        shiftX: 0,
+                        shiftY: 0,
+                        glowX: '50%',
+                        glowY: '50%'
+                    };
+                    schedule();
+                };
+
+                card.addEventListener('pointermove', (event) => {
+                    if (event.pointerType === 'touch') {
+                        return;
+                    }
+
+                    const rect = card.getBoundingClientRect();
+                    const ratioX = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+                    const ratioY = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+                    const centeredX = ratioX - 0.5;
+                    const centeredY = ratioY - 0.5;
+
+                    nextState = {
+                        rotateX: centeredY * -8,
+                        rotateY: centeredX * 10,
+                        shiftX: centeredX * 10,
+                        shiftY: centeredY * 8,
+                        glowX: `${(ratioX * 100).toFixed(2)}%`,
+                        glowY: `${(ratioY * 100).toFixed(2)}%`
+                    };
+                    card.classList.add('is-tilting');
+                    schedule();
+                });
+
+                card.addEventListener('pointerdown', (event) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left));
+                    const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+                    card.style.setProperty('--ripple-x', `${x}px`);
+                    card.style.setProperty('--ripple-y', `${y}px`);
+                });
+
+                card.addEventListener('pointerleave', reset);
+                card.addEventListener('pointercancel', reset);
+            });
+        };
+
+        const setupBackgroundMotion = () => {
+            if (!backgroundContainer || prefersReducedMotion || !supportsFinePointer) {
+                return;
+            }
+
+            let frame = 0;
+            let nextX = 0;
+            let nextY = 0;
+
+            const commit = () => {
+                frame = 0;
+                root?.style.setProperty('--bg-shift-x', `${nextX.toFixed(2)}px`);
+                root?.style.setProperty('--bg-shift-y', `${nextY.toFixed(2)}px`);
+            };
+
+            const schedule = () => {
+                if (!frame) {
+                    frame = requestAnimationFrame(commit);
+                }
+            };
+
+            const reset = () => {
+                nextX = 0;
+                nextY = 0;
+                schedule();
+            };
+
+            window.addEventListener('pointermove', (event) => {
+                if (event.pointerType === 'touch') {
+                    return;
+                }
+
+                nextX = (event.clientX / window.innerWidth - 0.5) * 28;
+                nextY = (event.clientY / window.innerHeight - 0.5) * 20;
+                schedule();
+            }, { passive: true });
+
+            document.body?.addEventListener('mouseleave', reset);
+            window.addEventListener('blur', reset);
+        };
+
+        applyRevealPresets();
+        setupStaggerGroups();
+        setupCardTilt();
+        setupBackgroundMotion();
 
         const NAV_CACHE_MS = 30000;
 
@@ -239,10 +420,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 musicVisual.style.maxHeight = '';
                 return;
             }
-            const height = musicVisual.scrollHeight;
+            musicVisual.style.height = '';
+            musicVisual.style.maxHeight = '';
+            const height = musicVisual.offsetHeight;
             if (height) {
-                musicVisual.style.height = `${height}px`;
-                musicVisual.style.maxHeight = `${height}px`;
                 lyricsPanel.style.height = `${height}px`;
                 lyricsPanel.style.maxHeight = `${height}px`;
             }
@@ -300,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const animateCounter = (element, target) => {
             let start = 0;
-            const duration = 2000;
+            const duration = 1400;
             const increment = target / (duration / 16);
             const updateCounter = () => {
                 start += increment;
@@ -335,9 +516,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const skillsObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.skill-fill').forEach(fill => {
+                        entry.target.querySelectorAll('.skill-fill').forEach((fill, index) => {
                             const width = fill.getAttribute('data-width') || '0';
-                            setTimeout(() => fill.style.width = `${width}%`, 200);
+                            setTimeout(() => {
+                                fill.classList.add('animating');
+                                fill.style.width = `${width}%`;
+                            }, 200 + index * 150);
                         });
                         skillsObserver.unobserve(entry.target);
                     }
@@ -519,6 +703,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, observerOptions);
         document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
 
+        const scrollRevealObserverOptions = { threshold: 0.15, rootMargin: '0px 0px -80px 0px' };
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    scrollRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, scrollRevealObserverOptions);
+        document.querySelectorAll('[data-scroll-reveal], [data-clip-reveal], [data-stagger], [data-line-reveal]').forEach(el => scrollRevealObserver.observe(el));
+
         const updateShiftDisplay = () => {
             if (!shiftValue) return;
             const sign = lyricShiftSec > 0 ? '+' : '';
@@ -638,43 +833,129 @@ document.addEventListener('DOMContentLoaded', () => {
             renderLyricsLines(mapped);
         };
 
+        const parseTtmlTime = (value) => {
+            if (!value) return null;
+            const normalized = String(value).trim();
+            const parts = normalized.split(':').map(Number);
+            if (parts.some((part) => Number.isNaN(part))) {
+                return null;
+            }
+            if (parts.length === 3) {
+                return parts[0] * 3600 + parts[1] * 60 + parts[2];
+            }
+            if (parts.length === 2) {
+                return parts[0] * 60 + parts[1];
+            }
+            return parts[0];
+        };
+
+        const parseTtml = (ttml) => {
+            if (!ttml || typeof DOMParser === 'undefined') {
+                return [];
+            }
+            try {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(ttml, 'application/xml');
+                const lines = Array.from(xml.getElementsByTagName('p'))
+                    .map((node) => {
+                        const begin = parseTtmlTime(node.getAttribute('begin'));
+                        const text = (node.textContent || '').replace(/\s+/g, ' ').trim();
+                        return begin === null || !text ? null : { time: begin, text };
+                    })
+                    .filter(Boolean);
+                return lines;
+            } catch (_) {
+                return [];
+            }
+        };
+
+        const LYRICS_SERVICES = [
+            {
+                name: 'better-lyrics',
+                hasSynced: true,
+                getUrl: (title, artist) => `https://lyrics-api.boidu.dev/getLyrics?a=${encodeURIComponent(artist)}&s=${encodeURIComponent(title)}`,
+                parse: (data) => {
+                    const syncedLines = parseTtml(data?.ttml || '');
+                    return {
+                        syncedLines,
+                        plain: syncedLines.length ? syncedLines.map((line) => line.text).join('\n') : ''
+                    };
+                }
+            },
+            {
+                name: 'lrclib',
+                hasSynced: true,
+                getUrl: (title, artist) => `https://lrclib.net/api/get?track_name=${encodeURIComponent(title)}&artist_name=${encodeURIComponent(artist)}`,
+                parse: (data) => {
+                    const synced = data?.syncedLyrics || '';
+                    const syncedLines = synced ? parseLrc(synced) : [];
+                    return {
+                        syncedLines,
+                        plain: data?.plainLyrics || ''
+                    };
+                }
+            },
+            {
+                name: 'lyrics-ovh',
+                hasSynced: false,
+                getUrl: (title, artist) => `https://api.lyrics.ovh/v1/${encodeURIComponent(artist)}/${encodeURIComponent(title)}`,
+                parse: (data) => ({
+                    syncedLines: [],
+                    plain: data?.lyrics || ''
+                })
+            }
+        ];
+
         async function fetchLyrics(artist, title, t, isPlaying) {
             if (!lyricsBox) return;
             const key = `${artist}-${title}`.toLowerCase();
             if (key === lastLyricsKey && lyricsBox.textContent) return;
+
             stopLyricSync();
             lyricsBox.textContent = (t?.music_loading) || 'Loading...';
             lastLyricsKey = key;
+
             const fail = () => {
                 stopLyricSync();
                 lyricsBox.textContent = (t?.music_none) || 'No lyrics';
             };
 
-            const tryFetch = async (url) => {
+            const tryService = async (service) => {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 5000);
-                const res = await fetch(url, { signal: controller.signal, headers: { 'Accept': 'application/json' } });
-                clearTimeout(timeoutId);
-                if (!res.ok) throw new Error('lyrics');
-                return res.json();
+                const timeoutId = setTimeout(() => controller.abort(), 6000);
+                try {
+                    const res = await fetch(service.getUrl(title, artist), {
+                        signal: controller.signal,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    clearTimeout(timeoutId);
+                    if (!res.ok) {
+                        return null;
+                    }
+                    const data = await res.json();
+                    return service.parse(data);
+                } catch (_) {
+                    clearTimeout(timeoutId);
+                    return null;
+                }
             };
 
-            try {
-                const data = await tryFetch(`https://lrclib.net/api/get?track_name=${encodeURIComponent(title)}&artist_name=${encodeURIComponent(artist)}`);
-                const synced = data?.syncedLyrics || '';
-                const plain = data?.plainLyrics || '';
-                if (synced) {
-                    const parsed = parseLrc(synced);
-                    if (parsed.length) {
-                        startLyricSync(parsed, isPlaying);
-                        return;
-                    }
+            for (const service of LYRICS_SERVICES) {
+                const result = await tryService(service);
+                if (!result) {
+                    continue;
                 }
-                if (plain) {
-                    renderPlainLyrics(plain);
+
+                if (service.hasSynced && result.syncedLines && result.syncedLines.length) {
+                    startLyricSync(result.syncedLines, isPlaying);
                     return;
                 }
-            } catch (_) {}
+
+                if (result.plain && result.plain.trim().length > 10) {
+                    renderPlainLyrics(result.plain);
+                    return;
+                }
+            }
 
             fail();
         }
@@ -682,4 +963,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Fatal error in script:', error);
     }
 });
-

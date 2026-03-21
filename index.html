@@ -114,16 +114,16 @@
 
     <main id="main-content" class="container">
         <section class="module module-hero" id="home" aria-labelledby="hero-title">
-            <div class="hero-content" data-aos>
-                <span class="hero-label glass-mini" role="text"><span aria-hidden="true">&rarr;</span> <span data-i18n="hero_welcome">Welcome</span></span>
-                <h1 id="hero-title" class="hero-title">
+            <div class="hero-content" data-aos data-scroll-reveal="left">
+                <span class="hero-label glass-mini" role="text" data-scroll-reveal><span aria-hidden="true">&rarr;</span> <span data-i18n="hero_welcome">Welcome</span></span>
+                <h1 id="hero-title" class="hero-title" data-scroll-reveal="up">
                     Alexander<br>
                     <span class="gradient-text">Salamatin</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-scroll-reveal="up">
                     <span data-i18n="hero_role">Python Developer</span> &middot; <span class="typing-text" aria-live="polite"></span>
                 </p>
-                <div class="hero-meta">
+                <div class="hero-meta" data-stagger="wave">
                     <div class="meta-item glass-mini">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-visual" data-aos>
+            <div class="hero-visual" data-aos data-scroll-reveal="right">
                 <div class="glass-card code-card" role="img" aria-label="Python code snippet showing Developer class">
                     <div class="code-header">
                         <div class="code-dots" aria-hidden="true">
@@ -162,18 +162,18 @@
         </section>
 
         <section class="module module-stats" aria-label="Statistics">
-            <div class="stats-grid">
-                <div class="stat-card glass-card liquid-glass" data-aos>
+            <div class="stats-grid" data-stagger="scale">
+                <div class="stat-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom">
                     <div class="stat-icon" aria-hidden="true">&#128640;</div>
                     <div class="stat-value" data-count="2" aria-label="2 projects completed">0</div>
                     <div class="stat-label" data-i18n="stats_projects">Projects Completed</div>
                 </div>
-                <div class="stat-card glass-card liquid-glass" data-aos>
+                <div class="stat-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom">
                     <div class="stat-icon" aria-hidden="true">&#128736;</div>
                     <div class="stat-value" data-count="4" aria-label="4 technologies">0</div>
                     <div class="stat-label" data-i18n="stats_technologies">Technologies</div>
                 </div>
-                <div class="stat-card glass-card liquid-glass" data-aos>
+                <div class="stat-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom">
                     <div class="stat-icon" aria-hidden="true">&#128293;</div>
                     <div class="stat-value" aria-label="100 percent motivation">100%</div>
                     <div class="stat-label" data-i18n="stats_motivation">Motivation</div>
@@ -182,16 +182,16 @@
         </section>
 
         <section class="module module-about" id="about" aria-labelledby="about-heading">
-            <div class="module-header" data-aos>
+            <div class="module-header" data-aos data-scroll-reveal="up">
                 <span class="module-badge glass-mini" data-i18n="about_badge">About Me</span>
                 <h2 id="about-heading" data-i18n="about_heading">Who I Am</h2>
             </div>
             <div class="about-grid">
-                <div class="about-text glass-card liquid-glass" data-aos>
+                <div class="about-text glass-card liquid-glass" data-aos data-scroll-reveal="left">
                     <p data-i18n="about_p1">Hi! I'm Alexander, a Python developer from Chelyabinsk passionate about creating clean, efficient code.</p>
                     <p data-i18n="about_p2">I'm constantly learning new technologies and approaches to software development. My focus is on writing maintainable code that solves real problems.</p>
                     <p data-i18n="about_p3">Currently looking for opportunities to gain practical experience and contribute to interesting projects.</p>
-                    <div class="about-highlights">
+                    <div class="about-highlights" data-stagger="wave">
                         <div class="highlight">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <polyline points="9 11 12 14 22 4"/>
@@ -215,9 +215,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="skills-card glass-card liquid-glass" data-aos>
+                <div class="skills-card glass-card liquid-glass" data-aos data-scroll-reveal="right">
                     <h3 data-i18n="skills_heading">Technical Skills</h3>
-                    <div class="skills-list">
+                    <div class="skills-list" data-stagger>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span>Python</span>
@@ -260,12 +260,12 @@
         </section>
 
         <section class="module module-work" id="work" aria-labelledby="work-heading">
-            <div class="module-header" data-aos>
+            <div class="module-header" data-aos data-scroll-reveal="up">
                 <span class="module-badge glass-mini" data-i18n="work_badge">Portfolio</span>
                 <h2 id="work-heading" data-i18n="work_heading">Featured Work</h2>
             </div>
-            <div class="work-grid">
-                <article class="work-card glass-card liquid-glass large" data-aos>
+            <div class="work-grid" data-stagger="wave">
+                <article class="work-card glass-card liquid-glass large" data-aos data-scroll-reveal="left">
                     <div class="work-image">
                         <img src="assets/pictures/nioscraft.jpg" alt="NiosCraft website preview" loading="lazy">
                     </div>
@@ -289,7 +289,7 @@
                     <div class="card-shine"></div>
                 </article>
 
-                <article class="work-card glass-card liquid-glass" data-aos>
+                <article class="work-card glass-card liquid-glass" data-aos data-scroll-reveal="right">
                     <div class="work-image small">
                         <img src="assets/pictures/profile.jpg" alt="Personal portfolio preview" loading="lazy">
                     </div>
@@ -317,34 +317,21 @@
         </section>
 
         <section class="module module-info" aria-label="Additional information">
-            <div class="info-grid">
-                <div class="info-card glass-card liquid-glass music-lyrics-card" data-aos>
+            <div class="info-grid" data-stagger="scale">
+                <div class="info-card glass-card liquid-glass music-lyrics-card" data-aos data-scroll-reveal="zoom">
                     <div class="music-visual">
                         <div class="music-cover">
                             <div class="music-artwork" aria-hidden="true"></div>
                         </div>
                         <div class="track-meta">
-                            <div class="track-header">
-                                <div class="track-label">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
-                                    </svg>
-                                    <div class="track-title-wrap">
-                                        <h4 data-i18n="info_music_title">Now Playing</h4>
-                                        <p class="lastfm-status" id="lastfm-status" aria-live="polite">Loading...</p>
-                                    </div>
+                            <p class="lastfm-status" id="lastfm-status" aria-live="polite">Loading...</p>
+                            <div class="track-copy">
+                                <div class="track-copy-head">
+                                    <p class="lastfm-track" id="lastfm-track" aria-live="polite"></p>
+                                    <button id="refresh-btn" class="music-refresh-link" type="button" data-i18n-aria="aria_refresh" aria-label="Refresh now playing track">Обновить</button>
                                 </div>
-                                <button id="refresh-btn" class="glass-mini" data-i18n-aria="aria_refresh" aria-label="Refresh now playing track">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M3 12h8"/>
-                                        <path d="M7 8l-4 4 4 4"/>
-                                        <path d="M21 12h-8"/>
-                                        <path d="M17 8l4 4-4 4"/>
-                                    </svg>
-                                </button>
+                                <div class="music-meta"></div>
                             </div>
-                            <p class="lastfm-track" id="lastfm-track" aria-live="polite"></p>
-                            <div class="music-meta"></div>
                         </div>
                     </div>
                     <div class="lyrics-panel">
@@ -369,7 +356,7 @@
                     </div>
                 </div>
 
-                <div class="info-card glass-card liquid-glass setup" data-aos>
+                <div class="info-card glass-card liquid-glass setup" data-aos data-scroll-reveal="right">
                     <h4>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -401,12 +388,12 @@
         </section>
 
         <section class="module module-contact" id="contact" aria-labelledby="contact-heading">
-            <div class="contact-header glass-card liquid-glass" data-aos>
+            <div class="contact-header glass-card liquid-glass" data-aos data-scroll-reveal="up">
                 <h2 id="contact-heading" data-i18n="contact_heading">Let's Work Together</h2>
                 <p data-i18n="contact_subtitle">I'm always interested in hearing about new projects and opportunities.</p>
             </div>
-            <div class="contact-grid">
-                <a href="https://t.me/Door0S" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Contact via Telegram @Door0S (opens in new tab)">
+            <div class="contact-grid" data-stagger="wave">
+                <a href="https://t.me/Door0S" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom" aria-label="Contact via Telegram @Door0S (opens in new tab)">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
@@ -419,7 +406,7 @@
                     <div class="card-shine"></div>
                 </a>
 
-                <a href="https://t.me/SH20FK_SP" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Telegram Channel @SH20FK_SP (opens in new tab)">
+                <a href="https://t.me/SH20FK_SP" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom" aria-label="Visit Telegram Channel @SH20FK_SP (opens in new tab)">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
@@ -432,7 +419,7 @@
                     <div class="card-shine"></div>
                 </a>
 
-                <a href="https://www.last.fm/user/SH20FK" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Last.fm profile @SH20FK (opens in new tab)">
+                <a href="https://www.last.fm/user/SH20FK" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom" aria-label="Visit Last.fm profile @SH20FK (opens in new tab)">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12zM9.36 18.336l5.28-5.28V7.2H9.36v11.136z"/>
@@ -445,7 +432,7 @@
                     <div class="card-shine"></div>
                 </a>
 
-                <a href="https://steamcommunity.com/id/SH20FK/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos aria-label="Visit Steam profile SH20FK (opens in new tab)">
+                <a href="https://steamcommunity.com/id/SH20FK/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card liquid-glass" data-aos data-scroll-reveal="zoom" aria-label="Visit Steam profile SH20FK (opens in new tab)">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-4.6 0-8.45-3.08-9.64-7.27l3.83 1.58a2.84 2.84 0 0 0 2.78 2.27c1.56 0 2.83-1.27 2.83-2.83v-.13l3.4-2.43h.08a3.65 3.65 0 0 0 3.65-3.65 3.65 3.65 0 0 0-3.65-3.65 3.65 3.65 0 0 0-3.65 3.65v.09L8.04 12.9a2.82 2.82 0 0 0-2.48-1.47c-.63 0-1.2.21-1.67.55L2 11.45A10 10 0 0 1 12 2m5.89 5.88c1.22 0 2.21.99 2.21 2.21a2.21 2.21 0 0 1-2.21 2.22 2.21 2.21 0 0 1-2.22-2.22c0-1.22 1-2.21 2.22-2.21m-9.77 7.84l-.9-.36c.2.49.6.86 1.15 1.02.99.41 2.13-.04 2.54-1.03.2-.48.21-1.01.01-1.48a1.9 1.9 0 0 0-1.04-1.04c-.48-.2-1-.19-1.44-.01l.94.39c.73.3 1.07 1.16.77 1.89a1.42 1.42 0 0 1-1.88.77"/>
@@ -475,6 +462,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
